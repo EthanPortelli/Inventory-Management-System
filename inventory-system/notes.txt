@@ -14,3 +14,10 @@ node server.js
 Enable Cors on the Backend:
 
 npm install Cors
+
+
+
+express: A web framework for building APIs and web applications.
+mariadb: A library for connecting your Node.js application to a MariaDB database.
+bcryptjs: A library for hashing passwords securely.
+cors: A middleware for enabling Cross-Origin Resource Sharing (CORS).
