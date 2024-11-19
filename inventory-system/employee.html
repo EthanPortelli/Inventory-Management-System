@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> <!-- Added defer to ensure JS loads after DOM -->
 </head>
 <body>
-    <h1>Employee Dashboard</h1>
-    <div id="inventory-list"></div>
+    <div class="navbar">Employee Dashboard</div>
 
-    <script src="script.js"></script>
+    <div class="container">
+        <!-- Inventory List Display Section -->
+        <h2>Inventory List</h2>
+        <div id="inventory-list"></div> <!-- This will be populated with items -->
+    </div>
 </body>
 </html>
+

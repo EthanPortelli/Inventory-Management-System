@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> <!-- Added defer to ensure JS loads after DOM -->
 </head>
 <body>
-    <h1>Admin Dashboard</h1>
-    <div id="inventory-list"></div>
-    <h2>Add Item</h2>
-    <form id="add-item-form">
-        <input type="text" id="item-name" placeholder="Item Name" required>
-        <input type="number" id="item-quantity" placeholder="Quantity" required>
-        <button type="submit">Add Item</button>
-    </form>
+    <div class="navbar">Admin Dashboard</div>
+    
+    <div class="container">
+        <!-- Inventory List Display Section -->
+        <h2>Inventory List</h2>
+        <div id="inventory-list"></div> <!-- This will be populated with items -->
 
-    <script src="script.js"></script>
+        <!-- Add Item Form -->
+        <h2>Add Item</h2>
+        <form id="add-item-form">
+            <input type="text" id="item-name" placeholder="Item Name" required>
+            <input type="number" id="item-quantity" placeholder="Quantity" required>
+            <button type="submit">Add Item</button>
+        </form>
+    </div>
 </body>
 </html>
+
+
+
+
