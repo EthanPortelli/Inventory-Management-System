@@ -6,4 +6,4 @@ const userController = require("./Controllers");
 router.post("/add-user", userController.addUser);
 
 // Export the router
-module.exports = router;
+module.exports = router; 
