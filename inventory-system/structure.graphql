@@ -1,0 +1,7 @@
+inventory-system/
+├── index.html          # Welcome/Login page
+├── admin.html          # Admin-specific page
+├── employee.html       # Employee-specific page
+├── style.css           # Shared styles for all pages
+└── script.js           # Main JavaScript file
+

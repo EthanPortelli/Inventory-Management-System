@@ -1,0 +1,16 @@
+Download node. js Here: https://nodejs.org/en/download/package-manager
+Ensure your in the correct file Example:
+cd /Users/Martin/Desktop/inventory-system
+
+Install bcryptjs:
+npm install bcryptjs
+
+Make sure you have all dependencies: 
+npm install
+
+How to run Server once node is installed:
+node server.js
+
+Enable Cors on the Backend:
+
+npm install Cors
