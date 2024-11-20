@@ -6,8 +6,8 @@ const pool = mariadb.createPool({
     host: "localhost", // Database host
     user: "testuser", // Database username
     password: "1234", // Database password
-    database: "testdb", // Database name
+    database: "inventory_system", // Database name
     connectionLimit: 10, // Maximum number of connections in the pool
 });
 
-module.exports = pool; // Export the pool for reuse
+module.exports = pool; // Export the pool for use
