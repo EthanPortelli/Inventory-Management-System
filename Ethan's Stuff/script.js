@@ -183,12 +183,3 @@ async function deleteItem(itemId) {
         }
     }
 }
-
-
-
-
-
-
-
-
-
