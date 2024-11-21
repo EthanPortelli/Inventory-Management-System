@@ -17,3 +17,25 @@ CREATE TABLE inventory (
     item_name VARCHAR(100) NOT NULL,
     quantity INT NOT NULL
 );
+
+
+Add users
+
+-- Add an admin user with a hashed password
+INSERT INTO users (username, password, role) 
+VALUES ('admin', '$2a$10$3xW76REubrl1keVaSEDQTeIGuGJ6oEcY/j1DzATgWFb0l/Y9pceNa', 'admin');
+
+-- Add an employee user with a hashed password
+INSERT INTO users (username, password, role) 
+VALUES ('employee', '$2a$10$gKwvsAJlrf9NenNgGdZol.RksTvkKtNbGqCMgP7juVJGxUEVVW2Tm', 'employee');
+
+Elevate privledge so users can access DB
+
+-- Grant all privileges to the admin user
+GRANT ALL PRIVILEGES ON database_name.* TO 'admin'@'localhost' IDENTIFIED BY 'admin123';
+
+-- Grant limited privileges (e.g., SELECT, INSERT) to the employee user
+GRANT SELECT, INSERT ON database_name.* TO 'employee'@'localhost' IDENTIFIED BY 'employee123';
+
+-- Apply the changes immediately
+FLUSH PRIVILEGES;
