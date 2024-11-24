@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('role', result.role); 
 
                     if (result.role === 'admin') {
-                        window.location.href = 'admin.html'; // Redirect to admin page
+                        window.location.href = 'admin.html'; // Redirect to admin page 
+                    } else if (result.role === 'manager') {
+                        window.location.href = 'manager.html'; // Redirect to manager page
                     } else if (result.role === 'employee') {
                         window.location.href = 'employee.html'; // Redirect to employee page
                     }
@@ -161,7 +163,7 @@ async function loadInventory() {
                 };
 
                 // Only create the delete button if the user is an admin
-                if (userRole === 'admin') {
+                if (userRole === "admin" || userRole === "manager") {
                     const deleteButton = document.createElement('button');
                     deleteButton.textContent = 'Delete';
                     deleteButton.classList.add('delete-button');
