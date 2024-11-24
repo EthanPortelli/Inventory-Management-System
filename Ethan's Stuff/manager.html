@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> <!-- Added defer to ensure JS loads after DOM -->
+</head>
+<body>
+    <div class="navbar">Manager Dashboard</div>
+    
+    <div class="container">
+        <!-- Inventory List Display Section -->
+        <h2>Inventory List</h2>
+        <div id="inventory-list"></div> <!-- This will be populated with items -->
+
+        <!-- Add Item Form -->
+        <h2>Add Item</h2>
+        <form id="add-item-form">
+            <input type="text" id="item-name" placeholder="Item Name" required>
+            <input type="text" id="item-price" placeholder="Price" required>
+            <input type="number" id="item-quantity" placeholder="Quantity" required>
+            <button type="submit">Add Item</button>
+        </form>
+    </div>
+</body>
+</html>
