@@ -1,5 +1,4 @@
-Example Tables for this test:
-
+Tables for this web-based application:
 
 CREATE DATABASE inventory_system;
 
@@ -23,7 +22,7 @@ CREATE TABLE inventory (
 );
 
 
-//To modify existing tables:
+To modify existing tables:
 
 ALTER TABLE users
 MODIFY COLUMN role ENUM('admin', 'manager', 'employee') NOT NULL;
