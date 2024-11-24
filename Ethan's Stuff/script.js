@@ -53,7 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
 
             const itemName = document.getElementById('item-name').value.trim();
+            const itemPrice = document.getElementById('item-price').value.trim();
             const itemQuantity = parseInt(document.getElementById('item-quantity').value);
+
 
             if (!itemName || isNaN(itemQuantity) || itemQuantity <= 0) {
                 alert('Invalid input. Please enter a valid item name and quantity.');
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify({
                         item_name: itemName,
+                        item_price: itemPrice,
                         quantity: itemQuantity
                     })
                 });
@@ -130,7 +133,32 @@ async function loadInventory() {
             inventory.forEach(item => {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('inventory-item');
-                itemElement.textContent = `${item.item_name} - Quantity: ${item.quantity}`;
+                itemElement.textContent = `${item.item_name} - Price: ${item.item_price} - Current Quantity: ${item.quantity}`;
+
+                const updateButton = document.createElement('button');
+                updateButton.textContent = 'Update';
+                updateButton.classList.add('update-button');
+
+                const editLabel = document.createElement('span');
+                editLabel.textContent = 'New Quantity:';
+                editLabel.classList.add('edit-label');  
+
+                const quantityInput = document.createElement('input');// Create an input field for quantity
+                quantityInput.type = 'number'; // Ensure it's a number input
+                quantityInput.value = item.quantity; // Set the current quantity as the input's value
+                quantityInput.setAttribute('min', '0'); 
+                quantityInput.classList.add('quantity-input');
+
+                // Add the input field and the update button to the item element
+                itemElement.appendChild(editLabel);
+                itemElement.appendChild(quantityInput);
+                itemElement.appendChild(updateButton);
+
+                // Add click event for updating item quantity
+                updateButton.onclick = () => {
+                    const newQuantity = quantityInput.value; // Get the new quantity from the input field
+                    updateItem(item.id, newQuantity); // Call the updateItem function with item ID and new quantity
+                };
 
                 // Only create the delete button if the user is an admin
                 if (userRole === 'admin') {
@@ -140,15 +168,6 @@ async function loadInventory() {
                     deleteButton.onclick = () => deleteItem(item.id); // Add click event for deleting item
                     itemElement.appendChild(deleteButton);
                 }
-
-                // Create a delete button for admin to remove items
-                /*
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'Delete';
-                deleteButton.classList.add('delete-button');
-                deleteButton.onclick = () => deleteItem(item.id); // Add click event for deleting item
-                itemElement.appendChild(deleteButton);
-                */
                
                 inventoryList.appendChild(itemElement);
                 console.log("Item added:", itemElement); // Log each item added to the list
@@ -180,6 +199,38 @@ async function deleteItem(itemId) {
         } catch (error) {
             console.error('Error deleting item:', error);
             alert('An error occurred while deleting the item.');
+        }
+    }
+}
+
+// UPDATE ITEM FUNCTION
+async function updateItem(itemId, itemQuantity) {
+    console.log(`Attempting to update item with ID: ${itemId}`); // Added for Debugging
+
+    if (confirm('Are you sure you want to update this item?')) {
+        try {
+            const response = await fetch(`http://localhost:3000/update-item/${itemId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    quantity: itemQuantity
+                })
+            });
+            
+            
+            const result = await response.json();
+
+            if (response.ok) {
+                alert(result.message || 'Item updated successfully!');
+                loadInventory(); // Refresh the inventory list
+            } else {
+                alert(result.error || 'Failed to update item.');
+            }
+        } catch (error) {
+            console.error('Error updating item:', error);
+            alert('An error occurred while uppdating the item.');
         }
     }
 }
