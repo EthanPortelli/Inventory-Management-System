@@ -336,10 +336,20 @@ async function loadUsers() {
                 editLabel.textContent = 'Edit Role:';
                 editLabel.classList.add('edit-label');  
 
-                const roleInput = document.createElement('input');// Create an input field for role
-                //roleInput.type = 'number'; // Ensure it's a number input
-                roleInput.value = user.role; // Set the current role as the input's value
+                const roleInput = document.createElement('select');// Create an select field for role
                 roleInput.classList.add('role-input');
+                
+                //createa drop down list to select roles from
+                const roles = ['admin', 'employee', 'manager'];
+                roles.forEach(role => {
+                    const option = document.createElement('option');
+                    option.value = role;
+                    option.textContent = role;
+                    if (role === user.role) {
+                        option.selected = true; // Set the current role as selected
+                    }
+                    roleInput.appendChild(option);
+                });
 
                 // Add the input field and the update button to the user element
                 userElement.appendChild(editLabel);
