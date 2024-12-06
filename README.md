@@ -10,6 +10,7 @@ Project 2: Web Based Application
 
 ## Introduction
 - This Project is a Web Based Application attempting to simulate a inventory management system for walmart.
+- All necessary files are located in the inventory-system folder
 
 ## Run mariaDB using HeidiSQL
 - HeidiSQL is a frontend for MariaDB, should come with the installation of MariaDB.
