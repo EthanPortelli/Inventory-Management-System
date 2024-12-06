@@ -20,17 +20,3 @@ CREATE TABLE inventory (
     item_price VARCHAR(100) NOT NULL,
     quantity INT NOT NULL
 );
-
-To modify existing tables:
-
-ALTER TABLE users
-MODIFY COLUMN role ENUM('admin', 'manager', 'employee') NOT NULL;
-
-ALTER TABLE users
-ADD firstName VARCHAR(50) AFTER password;
-
-ALTER TABLE users
-ADD lastName VARCHAR(50) AFTER firstName;
-
-ALTER TABLE inventory
-ADD item_price VARCHAR(100) NOT NULL AFTER item_name;
