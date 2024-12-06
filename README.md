@@ -12,10 +12,12 @@ Project 2: Web Based Application
 - This Project is a Web Based Application attempting to simulate a inventory management system for walmart.
 
 ## Run mariaDB using HeidiSQL
-- HeidiSQL is a frontend for MariaDB, should come with the installation of MariaDB
+- HeidiSQL is a frontend for MariaDB, should come with the installation of MariaDB.
   - Download MariaDb here: https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.5.2&os=windows&cpu=x86_64&pkg=msi&mirror=archive
   - Download Node.js here: https://nodejs.org/en/download/package-manager
-- Create a database in MariaDB as per the commands in the tables.txt file
+- Create a database in MariaDB as per the commands in the tables.txt file.
+- Create an admin user in the database to login to (ex: user - admin, pass - admin123)
+- Remeber that the password mush be hashed, do so using hashPasswords.js
 
 ## Run Server using PowerShell / Command Prompt
 - In the proper directory (ex: C:\Users\ethan\NodeJs\inventory-system), run:
