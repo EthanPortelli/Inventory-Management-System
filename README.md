@@ -27,7 +27,7 @@ Project 2: Web Based Application
 - Run the server with 'node App.js' *Ensure you are in the correct directory*
 
 ## Go to http://localhost:3000/ in a web browser
-- This will display a local version of the web application.
+- This will direcr you to the login page of the web application.
 
 
 
