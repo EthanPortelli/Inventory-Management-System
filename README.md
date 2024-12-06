@@ -21,9 +21,9 @@ Project 2: Web Based Application
 
 ## Run Server using PowerShell / Command Prompt
 - In the proper directory (ex: C:\Users\ethan\NodeJs\inventory-system), run:
-      npm install mariadb
-      npm install express
-      npm install bcryptjs
+   npm install mariadb
+   npm install express
+   npm install bcryptjs
 - Run the server with 'node App.js' *Ensure you are in the correct directory*
 
 ## Go to http://localhost:3000/ in a web browser
