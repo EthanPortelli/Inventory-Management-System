@@ -6,11 +6,11 @@ Project 2: Web Based Application
 - express: A web framework for building APIs and web applications.
 - mariadb: A library for connecting your Node.js application to a MariaDB database.
 - bcryptjs: A library for hashing passwords securely.
-- This project is only ran locally.
+- This project is meant to be ran locally.
 
 ## Introduction
 - This Project is a Web Based Application attempting to simulate a inventory management system for walmart.
-- All necessary files are located in the inventory-system folder
+- All necessary files are located in the inventory-system folder.
 
 ## Run mariaDB using HeidiSQL
 - HeidiSQL is a frontend for MariaDB, should come with the installation of MariaDB.
